@@ -1,0 +1,6 @@
+.root {
+    -signature-blue: rgb(115, 159, 204);
+    -signature-blue-accent: rgb(69, 111, 151);
+    -mid-gray: rgb(216, 222, 227);
+    -fx-background-color: -signature-blue;
+}

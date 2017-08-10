@@ -3,7 +3,6 @@ package com.github.tosken1337.afwfx.example.view;
 import com.github.tosken1337.afwfx.annotation.AppView;
 import com.github.tosken1337.afwfx.core.ApplicationView;
 import com.github.tosken1337.afwfx.core.ViewStateController;
-import com.github.tosken1337.afwfx.example.viewmodel.MainViewModel;
 import com.github.tosken1337.afwfx.example.viewmodel.SecondViewModel;
 import com.google.inject.Inject;
 import com.typesafe.config.Config;

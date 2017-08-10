@@ -15,5 +15,5 @@ public enum ApplicationEvent {
         return id;
     }
 
-    private String id;
+    private final String id;
 }

@@ -72,4 +72,8 @@ public class DefaultViewStateController implements ViewStateController {
     public void setStage(final Stage stage) {
         this.stage = stage;
     }
+
+    public void addStylesheet(String stylesheet) {
+        scene.getStylesheets().add(DefaultViewStateController.class.getResource(stylesheet).toExternalForm());
+    }
 }

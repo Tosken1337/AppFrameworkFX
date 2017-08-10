@@ -2,6 +2,7 @@ package com.github.tosken1337.afwfx;
 
 import com.github.tosken1337.afwfx.core.DefaultViewStateController;
 import com.github.tosken1337.afwfx.core.ViewStateController;
+import com.github.tosken1337.afwfx.util.Resources;
 import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
 import com.google.inject.Module;
@@ -10,8 +11,6 @@ import com.typesafe.config.ConfigFactory;
 import de.saxsys.mvvmfx.MvvmFX;
 import de.saxsys.mvvmfx.guice.MvvmfxGuiceApplication;
 import de.saxsys.mvvmfx.utils.notifications.NotificationCenter;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,15 +26,16 @@ import java.util.ResourceBundle;
 public class Application extends MvvmfxGuiceApplication {
     private static final Logger log = LogManager.getLogger(Application.class);
 
-    private static ResourceBundle resourceBundle = ResourceBundle.getBundle("default", Locale.getDefault());
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("default", Locale.getDefault());
 
-    private DefaultViewStateController viewStateController = new DefaultViewStateController();
+    private final DefaultViewStateController viewStateController = new DefaultViewStateController();
 
     @Inject
     private NotificationCenter notificationCenter;
 
     @Override
     public void startMvvmfx(final Stage stage) throws Exception {
+        log.info("Starting application");
         MvvmFX.setGlobalResourceBundle(resourceBundle);
 
         viewStateController.setStage(stage);
@@ -46,7 +46,13 @@ public class Application extends MvvmfxGuiceApplication {
         stage.setResizable(true);
         stage.setOnCloseRequest(event -> notificationCenter.publish(ApplicationEvent.Exit.getId()));
 
+
+        // Load and add all css files from classpath resource folder 'css'
+        Resources.getResourcesFromClasspath("./css", ".css").forEach(s -> viewStateController.addStylesheet("/css/" + s));
+
+
         viewStateController.showDefaultView();
+        log.info("Showing default view");
     }
 
     @Override

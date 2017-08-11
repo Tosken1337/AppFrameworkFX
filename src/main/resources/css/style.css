@@ -1,6 +1,28 @@
+@font-face {
+    font-family: Flaticon;
+    src: url('../Flaticon.ttf');
+}
+
 .root {
-    -signature-blue: rgb(115, 159, 204);
+    -signature-orange: rgb(230, 158, 108);
+    -signature-green: rgb(16, 154, 86);
     -signature-blue-accent: rgb(69, 111, 151);
-    -mid-gray: rgb(216, 222, 227);
-    -fx-background-color: -signature-blue;
+    -dark-gray: rgb(60, 72, 84);
+    -mid-gray: rgb(168, 168, 168);
+    -light-gray: rgb(216, 222, 227);
+}
+
+.navbar {
+    -fx-background-color: -dark-gray;
+    /*-fx-background-radius: 0px 0px 8px 8px;*/
+}
+
+.panel {
+    -fx-background-color: -dark-gray;
+    /*-fx-background-radius: 8px 8px 0px 0px;*/
+}
+
+.icon {
+    -fx-font-family: "Flaticon";
+    -fx-font-size: 18pt;
 }

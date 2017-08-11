@@ -12,6 +12,7 @@ import de.saxsys.mvvmfx.MvvmFX;
 import de.saxsys.mvvmfx.guice.MvvmfxGuiceApplication;
 import de.saxsys.mvvmfx.utils.notifications.NotificationCenter;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,6 +45,7 @@ public class Application extends MvvmfxGuiceApplication {
         //stage.getIcons().setAll(new Image(AppStarter.class.getResource("/icon.png").toExternalForm()));
         stage.setTitle(resourceBundle.getString("window.title"));
         stage.setResizable(true);
+        //stage.initStyle(StageStyle.TRANSPARENT);
         stage.setOnCloseRequest(event -> notificationCenter.publish(ApplicationEvent.Exit.getId()));
 
 

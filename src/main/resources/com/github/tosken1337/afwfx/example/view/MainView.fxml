@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane fx:controller="com.github.tosken1337.afwfx.example.view.MainView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
-    <Button fx:id="switchButton" text="Switch View" onAction="#switchView"/>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="495" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="495.0" stylesheets="@../../../../../../css/style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.tosken1337.afwfx.example.view.MainView">
+   <AnchorPane prefHeight="64.0" prefWidth="495.0" styleClass="navbar">
+      <children>
+         <ImageView layoutX="80.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="/icons/icons8_Settings_32px.png" />
+            </image>
+         </ImageView>
+         <ImageView layoutX="180.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="/icons/icons8_User_32px.png" />
+            </image>
+         </ImageView>
+         <ImageView layoutX="280.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="/icons/icons8_TV_32px.png" />
+            </image>
+         </ImageView>
+          <ImageView layoutX="380.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="/icons/icons8_Exit_32px.png" />
+              </image>
+          </ImageView>
+      </children>
+   </AnchorPane>
+   <AnchorPane layoutY="74.0" prefHeight="475.0" prefWidth="495.0" styleClass="panel">
+      <children>
+          <Button fx:id="switchButton" layoutX="200.0" layoutY="217.0" onAction="#switchView" styleClass="icon" text="%test" />
+      </children>
+   </AnchorPane>
 </AnchorPane>
